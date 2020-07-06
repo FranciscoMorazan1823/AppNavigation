@@ -1,4 +1,5 @@
 package com.frank.mipymes
+import android.util.Log
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,14 +7,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.determinacion.R
 import com.example.determinacion.databinding.FragmentInventarioBinding
+import inventarioViewModel
 
 
 /**
  * A simple [Fragment] subclass.
  */
 class inventarioFragment : Fragment() {
+
+private lateinit var viewModel: inventarioViewModel
+
+
+    private  lateinit var binding: inventarioFragment
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +34,27 @@ class inventarioFragment : Fragment() {
             inflater, R.layout.fragment_inventario, container, false
         )
         return binding.root
+        Log.i("inventarioFragment", "Called viewModelProvider")
+
+        viewModel = ViewModelProvider(this).get(inventarioViewModel::class.java)
+
+
+        fun update(){
+
+
+            binding.nameProduct.text=viewModel.name.toString()
+            binding.Code.String=viewModel.code
+            binding.precioventa=viewModel.precioVenta
+            binding.preciocompra=viewModel.precioCompra
+            binding.Stock= viewModel.stock
+
+
+        }
+
+        binding.Add.setOnClickListener{update()}
+
+
     }
 
 }
+

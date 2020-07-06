@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.determinacion.R
 import com.example.determinacion.databinding.FragmentLoginBinding
@@ -15,6 +17,11 @@ import com.example.determinacion.databinding.FragmentLoginBinding
  * A simple [Fragment] subclass.
  */
 class loginFragment : Fragment() {
+
+    private lateinit var viewModel:loginViewModel
+
+
+    private  lateinit var binding: loginFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +37,19 @@ class loginFragment : Fragment() {
 
         }
         return binding.root
-    }
+        viewModel = ViewModelProvider(this).get(loginViewModel::class.java)
+
+
+        fun update(){
+
+
+            binding.email.text=viewModel.email
+            binding.pass.text= viewModel.password
+
+
+
+        }
+
+        binding.login.onClickListener{update() }
 
 }

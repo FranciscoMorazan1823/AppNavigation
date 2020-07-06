@@ -37,48 +37,101 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/recordatorio_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="80dp"
-        android:ems="10"
-        android:hint=" Agregar un Producto"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/recordatorio_bar"
-        app:layout_constraintEnd_toEndOf="@+id/recordatorio_bar"
-        app:layout_constraintStart_toStartOf="@+id/recordatorio_bar"
-        app:layout_constraintTop_toTopOf="@+id/recordatorio_bar" />
+        <EditText
+            android:id="@+id/recordatorio_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="80dp"
+            android:ems="10"
+            android:hint="Buscar Producto"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/recordatorio_bar"
+            app:layout_constraintEnd_toEndOf="@+id/recordatorio_bar"
+            app:layout_constraintStart_toStartOf="@+id/recordatorio_bar"
+            app:layout_constraintTop_toTopOf="@+id/recordatorio_bar" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="52dp"
         android:layout_height="61dp"
-        android:src="@drawable/ic_add_circle"
+        app:srcCompat="@drawable/ic_add_circle"
         app:layout_constraintBottom_toBottomOf="@+id/recordatorio_bar"
         app:layout_constraintEnd_toEndOf="@+id/recordatorio_bar"
         app:layout_constraintStart_toEndOf="@+id/recordatorio_input"
         app:layout_constraintTop_toTopOf="@+id/recordatorio_bar" />
 
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="570dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recordatorio_bar">
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/nameProduct"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
-    </ScrollView>
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="119dp" />
+
+        <EditText
+            android:id="@+id/Code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:text="code"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="191dp" />
+
+        <ImageView
+            android:id="@+id/imageproduct"
+            android:layout_width="124dp"
+            android:layout_height="127dp"
+            app:srcCompat="@drawable/ic_mas"
+            tools:layout_editor_absoluteX="271dp"
+            tools:layout_editor_absoluteY="109dp" />
+
+        <Button
+            android:id="@+id/Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            app:layout_constraintBottom_toTopOf="@+id/button_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recordatorio_bar"
+            app:layout_constraintVertical_bias="0.837" />
+
+        <EditText
+            android:id="@+id/Stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:text="Stock"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="414dp" />
+
+        <EditText
+            android:id="@+id/precioventa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="Precio Venta"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="281dp" />
+
+        <EditText
+            android:id="@+id/preciocompra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="Precio Compra"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="351dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
